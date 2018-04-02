@@ -6,11 +6,12 @@ raw_type = 8
 raw_file = '01.raw'
 img_width = 1632
 img_height = 1224
-img_file = raw_file.split('.')[0]+'jpg'
+img_file = raw_file.split('.')[0]+'.jpg'
 
 with open(raw_file, 'rb') as f:
     img_raw = f.read()
 
+img = []
 for i in range(img_height):
     line_value = []
     for j in range(img_width):
@@ -19,4 +20,4 @@ for i in range(img_height):
 
 if raw_type==8:
     img = np.array(img)
-cv2.imwrite(img_file, img)
+    cv2.imwrite(img_file, img)
